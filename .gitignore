@@ -3,4 +3,5 @@
 .RData
 .Ruserdata
 *.RDS
+!alphavantage_data_EUNL.DE.RDS
 api_key_alphavantage.txt
