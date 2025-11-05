@@ -166,7 +166,12 @@ s4_paths <-
 
 # --- 5. Ergebnisse zusammenfassen und visualisieren ---
 results_df <- data.frame(
-  Strategy = rep(c("S1: Lump Sum Now", "S2: Lump Sum Later", "S3: Phased Selling", "S4: Dynamic (Positive Return)"), each = N_sim),
+  Strategy = rep(c(
+    "S1: Sofortiger Verkauf",
+    "S2: Später Verkauf",
+    "S3: Gestaffelter Verkauf",
+    "S4: Dynamischer Verkauf (Positive Rendite)"
+  ), each = N_sim),
   Final_Portfolio_Value = c(results_S1, results_S2, results_S3, results_S4)
 )
 
@@ -181,10 +186,16 @@ summary_results <- results_df %>%
     Max = max(Final_Portfolio_Value)
   ) %>%
   mutate(
-    Strategy = factor(Strategy, levels = c("S1: Lump Sum Now", "S2: Lump Sum Later", "S3: Phased Selling", "S4: Dynamic (Positive Return)"))
+    Strategy = factor(Strategy,
+                      levels = c("S1: Sofortiger Verkauf",
+                                 "S2: Später Verkauf",
+                                 "S3: Gestaffelter Verkauf",
+                                 "S4: Dynamischer Verkauf (Positive Rendite)"))
   )
 
 print(summary_results)
+
+write_csv(summary_results, "results/summary_results.csv")
 
 # Visualisierung
 plot_box <-
