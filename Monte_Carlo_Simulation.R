@@ -266,6 +266,6 @@ full_portfolio_paths_tibble <-
 
 # Die Daten speichern
 
-saveRDS(all_scenarios, "all_scenarios.RDS")
+saveRDS(all_scenarios, "data/all_scenarios.RDS")
 
-saveRDS(full_portfolio_paths_tibble, "full_portfolio_paths_tibble.RDS")
+saveRDS(full_portfolio_paths_tibble, "data/full_portfolio_paths_tibble.RDS")

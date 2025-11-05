@@ -1,7 +1,7 @@
 library(tidyverse)
 
 # Daten laden
-full_portfolio_paths_tibble <- readRDS("full_portfolio_paths_tibble.RDS")
+full_portfolio_paths_tibble <- readRDS("data/full_portfolio_paths_tibble.RDS")
 
 # 1. Die Anzahl der zu plottenden Pfade
 sample_size <- 30
@@ -29,7 +29,7 @@ plot_sample_paths_vs_mean <-
   scale_y_continuous(labels = scales::dollar_format(prefix = "€", big.mark = ".")) +
   labs(x = "Zeit [Monate]", y = "Portfoliowert",
        title = "Simulierte Wertentwicklung von 30 Beispielszenarien",
-       subtitle = "Simuliert mit Braunscher Bewegung"
+       subtitle = "Simuliert mit Brownscher Bewegung"
   ) +
   theme_minimal() +
   theme(legend.position = "none")

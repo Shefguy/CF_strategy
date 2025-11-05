@@ -2,7 +2,7 @@ library(alphavantager)
 library(tidyverse)
 
 get_time_series_ticker <- function(ticker = "EUNL.DE", update = F) {
-  data_path <- paste0("alphavantage_data_", ticker, ".RDS")
+  data_path <- paste0("data/alphavantage_data_", ticker, ".RDS")
   
   # Cache Check
   if(file.exists(data_path) & !update) {

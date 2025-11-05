@@ -1,7 +1,7 @@
 library(tidyverse)
 
 # Daten Laden
-all_scenarios <- readRDS("all_scenarios.RDS")
+all_scenarios <- readRDS("data/all_scenarios.RDS")
 
 # Den Pfad mit der schlechtesten Performance finden
 worst_scenario <-
@@ -111,7 +111,7 @@ plot_mean_scenario_paths <-
     x = "Zeit [Monate]",
     y = "Portfoliowert",
     title = "Wertentwicklung je nach Verkaufsstrategie",
-    subtitle = "Mittelwerte einer Monte Carlo Simulation mit Braunscher Bewegung \nauf Basis beobachteter Wertentwicklungen."
+    subtitle = "Mittelwerte einer Monte Carlo Simulation mit Brownscher Bewegung \nauf Basis beobachteter Wertentwicklungen."
   ) +
   theme_minimal() +
   theme(legend.position = "bottom")
